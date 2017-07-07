@@ -10,28 +10,15 @@ import {
     Sidebar
 } from 'semantic-ui-react'
 
-class SidebarView extends Component {
-
-    constructor(props) {
-        super(props)
-        this.state = {
-            visible: true
-        }
-    }
-
-    toggleVisibility = () => this.setState({
-        visible: !this.state.visible
-    })
-
-    render() {
-        const {visible} = this.state
+const LeftSidebarView = (props) => {
+    const {toggleVisibility, visibility} = props
         return (
             <Sidebar.Pushable as={Segment}>
                 <Sidebar
                     as={Menu}
                     animation='overlay'
                     width='thin'
-                    visible={visible}
+                    visible={visiblility}
                     vertical
                     inverted>
                     <Menu.Item name='home'>
@@ -48,11 +35,10 @@ class SidebarView extends Component {
                     </Menu.Item>
                 </Sidebar>
                 <Sidebar.Pusher>
-                    <Button onClick={this.toggleVisibility}/> 
+                    <Button onClick={toggleVisibility(visiblility)}/> 
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
         );
-    }
 }
 
-export default SidebarView
+export default LeftSidebarView

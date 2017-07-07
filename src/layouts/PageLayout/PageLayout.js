@@ -1,7 +1,7 @@
 import React from 'react'
 import {IndexLink, Link} from 'react-router'
 import PropTypes from 'prop-types'
-import SidebarView from './components/SidebarView'
+import LeftSidebar from './LeftSidebar'
 import './PageLayout.scss'
 
 class PageLayout extends React.Component {
@@ -10,7 +10,7 @@ class PageLayout extends React.Component {
     const {children} = this.props
     return (
       <div>
-        <SidebarView />  
+        <LeftSidebar />  
         {this.children}
       </div>
     );
