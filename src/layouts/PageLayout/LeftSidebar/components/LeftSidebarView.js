@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {
     Button,
     Container,
@@ -11,14 +12,14 @@ import {
 } from 'semantic-ui-react'
 
 const LeftSidebarView = (props) => {
-    const {toggleVisibility, visibility} = props
+    const {visibility, toggleVisibility} = props
         return (
             <Sidebar.Pushable as={Segment}>
                 <Sidebar
                     as={Menu}
                     animation='overlay'
                     width='thin'
-                    visible={visiblility}
+                    visible={visibility}
                     vertical
                     inverted>
                     <Menu.Item name='home'>
@@ -35,7 +36,7 @@ const LeftSidebarView = (props) => {
                     </Menu.Item>
                 </Sidebar>
                 <Sidebar.Pusher>
-                    <Button onClick={toggleVisibility(visiblility)}/> 
+                    <Button onClick={toggleVisibility.bind(this)}/> 
                 </Sidebar.Pusher>
             </Sidebar.Pushable>
         );
