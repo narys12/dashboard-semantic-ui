@@ -6,7 +6,7 @@ import './topMenu.scss'
 const TopMenuView = (props) => {
     return (
         <Menu attached='top' size='small'>
-            <Menu.Menu position='left'>
+            <Menu.Menu>
                 <div className='ui right aligned category search item'>
                     <div className='ui transparent icon input'>
                         <input className='prompt' type='text' placeholder='Search something...'/>

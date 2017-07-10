@@ -16,7 +16,7 @@ class LeftSidebarView extends React.Component{
         this.state = { activeItem: 'home' }
     }
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+    handleItemClick = (name, e) => this.setState({ activeItem: name })
 
     render() {
         const {visibility} = this.props
@@ -30,22 +30,28 @@ class LeftSidebarView extends React.Component{
                 vertical
                 inverted>
                 <Link to='/'>
-                    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
-                        <Icon name='home'/>
-                        Dashboard
-                    </Menu.Item>
+                    <div onClick={this.handleItemClick.bind(this, 'home')}>
+                        <Menu.Item active={activeItem === 'home'} link>
+                            <Icon name='home'/>
+                            Dashboard
+                        </Menu.Item>
+                    </div>
                 </Link>
                 <Link to='offers'>
-                    <Menu.Item name='offers' active={activeItem === 'offers'} onClick={this.handleItemClick}>
-                        <Icon name='gamepad'/>
-                        Offers
-                    </Menu.Item>
+                    <div onClick={this.handleItemClick.bind(this, 'offers')}>
+                        <Menu.Item active={activeItem === 'offers'} link>
+                            <Icon name='gamepad'/>
+                            Offers
+                        </Menu.Item>
+                    </div>
                 </Link>
                 <Link to='products'>
-                    <Menu.Item name='products' active={activeItem === 'products'} onClick={this.handleItemClick}>
-                        <Icon name='camera'/>
-                        Products
-                    </Menu.Item>
+                    <div onClick={this.handleItemClick.bind(this, 'products')}>
+                        <Menu.Item active={activeItem === 'products'} link>
+                            <Icon name='camera'/>
+                            Products
+                        </Menu.Item>
+                    </div>
                 </Link>
             </Sidebar>
         );
