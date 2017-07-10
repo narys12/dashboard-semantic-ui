@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Dropdown, Icon, Label, Menu, Segment} from 'semantic-ui-react'
-import './topMenu.scss'
+import {Dropdown, Icon, Menu, Segment} from 'semantic-ui-react'
+
+import {avatar} from '../assets/man-avatar.png'
+import TopMenuItem from './TopMenuItem'
+import UserMenuItem from './UserMenuItem'
 
 const TopMenuView = (props) => {
     return (
@@ -17,23 +20,35 @@ const TopMenuView = (props) => {
             </Menu.Menu>
 
             <Menu.Menu position='right'>
-                <Dropdown pointing className='link item icon top right' icon='mail' labeled text='3' id='message-menu'>
+                <Dropdown
+                    pointing
+                    className='link item icon top right'
+                    icon='mail'
+                    trigger={<TopMenuItem color='red' count='2' />}>
                     <Dropdown.Menu>
                         <Dropdown.Header>Categories</Dropdown.Header>
                         <Dropdown.Item>Cancellations</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <Dropdown pointing className='link item icon top right' icon='bell' labeled text='22' id='user-menu'>
+                <Dropdown
+                    pointing
+                    className='link item icon top right'
+                    icon='bell'
+                    trigger={<TopMenuItem color='teal' count='13' />}>
                     <Dropdown.Menu>
                         <Dropdown.Header>Categories</Dropdown.Header>
                         <Dropdown.Item>Cancellations</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <Dropdown pointing className='link item icon top right' icon='user'>
+                <Dropdown
+                    pointing
+                    className='link item icon top right'
+                    trigger={<UserMenuItem name='John Doe' image={avatar} />}
+                    icon={null}>
                     <Dropdown.Menu>
-                        <Dropdown.Item icon='user circle' text='Profile' />
-                        <Dropdown.Divider />
-                        <Dropdown.Item icon='log out' text='Logout' />
+                        <Dropdown.Item icon='user circle' text='Profile'/>
+                        <Dropdown.Divider/>
+                        <Dropdown.Item icon='log out' text='Logout'/>
                     </Dropdown.Menu>
                 </Dropdown>
             </Menu.Menu>
