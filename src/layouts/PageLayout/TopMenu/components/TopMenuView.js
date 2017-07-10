@@ -23,15 +23,19 @@ const TopMenuView = (props) => {
                         <Dropdown.Item>Cancellations</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <Dropdown pointing className='link item icon top right' icon='user' labeled text='22' id='user-menu'>
+                <Dropdown pointing className='link item icon top right' icon='bell' labeled text='22' id='user-menu'>
                     <Dropdown.Menu>
                         <Dropdown.Header>Categories</Dropdown.Header>
                         <Dropdown.Item>Cancellations</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
-                <Menu.Item as='a'>
-                    LogOut
-                </Menu.Item>
+                <Dropdown pointing className='link item icon top right' icon='user'>
+                    <Dropdown.Menu>
+                        <Dropdown.Item icon='user circle' text='Profile' />
+                        <Dropdown.Divider />
+                        <Dropdown.Item icon='log out' text='Logout' />
+                    </Dropdown.Menu>
+                </Dropdown>
             </Menu.Menu>
         </Menu>
     )
