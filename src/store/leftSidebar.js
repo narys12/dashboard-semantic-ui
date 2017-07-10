@@ -1,7 +1,7 @@
 const SIDEBAR_VISIBILITY = 'SIDEBAR_VISIBILITY'
 
 const initialState = {
-    visible: false
+    visible: true
 }
 
 function leftSidebarReducer(state = initialState, action){

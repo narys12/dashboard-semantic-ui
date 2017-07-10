@@ -2,44 +2,54 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {
     Button,
-    Container,
-    Header,
     Icon,
     Image,
     Menu,
     Segment,
     Sidebar
 } from 'semantic-ui-react'
+import {IndexLink, Link} from 'react-router'
 
-const LeftSidebarView = (props) => {
-    const {visibility, toggleVisibility} = props
+class LeftSidebarView extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = { activeItem: 'home' }
+    }
+
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+    render() {
+        const {visibility} = this.props
+        const {activeItem} = this.state
         return (
-            <Sidebar.Pushable as={Segment}>
-                <Sidebar
-                    as={Menu}
-                    animation='overlay'
-                    width='thin'
-                    visible={visibility}
-                    vertical
-                    inverted>
-                    <Menu.Item name='home'>
+            <Sidebar
+                as={Menu}
+                animation='overlay'
+                visible={visibility}
+                width='thin'
+                vertical
+                inverted>
+                <Link to='/'>
+                    <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick}>
                         <Icon name='home'/>
                         Dashboard
                     </Menu.Item>
-                    <Menu.Item name='gamepad'>
+                </Link>
+                <Link to='offers'>
+                    <Menu.Item name='offers' active={activeItem === 'offers'} onClick={this.handleItemClick}>
                         <Icon name='gamepad'/>
                         Offers
                     </Menu.Item>
-                    <Menu.Item name='camera'>
+                </Link>
+                <Link to='products'>
+                    <Menu.Item name='products' active={activeItem === 'products'} onClick={this.handleItemClick}>
                         <Icon name='camera'/>
                         Products
                     </Menu.Item>
-                </Sidebar>
-                <Sidebar.Pusher>
-                    <Button onClick={toggleVisibility.bind(this)}/> 
-                </Sidebar.Pusher>
-            </Sidebar.Pushable>
+                </Link>
+            </Sidebar>
         );
+    }
 }
 
 export default LeftSidebarView
