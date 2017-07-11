@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Dropdown, Icon, Menu, Segment} from 'semantic-ui-react'
+import {Dropdown, Icon, Image, Menu, Segment, Table, Header} from 'semantic-ui-react'
 
 import {avatar} from '../assets/man-avatar.png'
 import MessageMenuItem from './MessageMenuItem'
@@ -8,7 +8,7 @@ import TopMenuItem from './TopMenuItem'
 import UserMenuItem from './UserMenuItem'
 
 const TopMenuView = (props) => {
-    var date = new Date().toISOString().slice(0,10);
+    var date = new Date();
     return (
         <Menu attached='top' size='small'>
             <Menu.Menu>
@@ -28,8 +28,12 @@ const TopMenuView = (props) => {
                     icon='mail'
                     trigger={<TopMenuItem color='red' count='2' />}>
                     <Dropdown.Menu>
-                        <Dropdown.Item content={<MessageMenuItem name='Patrick' msg='Hello theredsds qsdfqd qsdfqdfq qdfqdsfq dsjfnlqdsfnq qdfjqdlj' date={date} />} />
-                        <Dropdown.Item content={<MessageMenuItem name='Jane' msg='Bye' date={date} />} />
+                        <Table celled>
+                            <Table.Body>
+                                <MessageMenuItem name='Eric' msg='Hello guy' date={date}/>
+                                <MessageMenuItem name='Jane Doe' msg='Hello! How are you?' date={date}/>
+                            </Table.Body>
+                        </Table>
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown

@@ -1,14 +1,22 @@
-#message-menu-item{
-    font-size: 10px;
-    width: 250px;
-    #message-menu-content{
-        font-size: 1em;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100px;
-        .date{
-            font-size: 0.7em
-        }
-    }
+#message-menu-item {
+  font-size: 13px;
+  width: 250px;
+  .date {
+    font-size: 0.7em
+  }
+  #message-user {
+    padding-left: 0px;
+    font-size: 0.7em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+  }
+  #message-menu-content {
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
 }
