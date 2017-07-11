@@ -3,10 +3,12 @@ import PropTypes from 'prop-types';
 import {Dropdown, Icon, Menu, Segment} from 'semantic-ui-react'
 
 import {avatar} from '../assets/man-avatar.png'
+import MessageMenuItem from './MessageMenuItem'
 import TopMenuItem from './TopMenuItem'
 import UserMenuItem from './UserMenuItem'
 
 const TopMenuView = (props) => {
+    var date = new Date().toISOString().slice(0,10);
     return (
         <Menu attached='top' size='small'>
             <Menu.Menu>
@@ -26,14 +28,15 @@ const TopMenuView = (props) => {
                     icon='mail'
                     trigger={<TopMenuItem color='red' count='2' />}>
                     <Dropdown.Menu>
-                        <Dropdown.Header>Categories</Dropdown.Header>
-                        <Dropdown.Item>Cancellations</Dropdown.Item>
+                        <Dropdown.Item content={<MessageMenuItem name='Patrick' msg='Hello theredsds qsdfqd qsdfqdfq qdfqdsfq dsjfnlqdsfnq qdfjqdlj' date={date} />} />
+                        <Dropdown.Item content={<MessageMenuItem name='Jane' msg='Bye' date={date} />} />
                     </Dropdown.Menu>
                 </Dropdown>
                 <Dropdown
                     pointing
                     className='link item icon top right'
                     icon='bell'
+                    compact
                     trigger={<TopMenuItem color='teal' count='13' />}>
                     <Dropdown.Menu>
                         <Dropdown.Header>Categories</Dropdown.Header>

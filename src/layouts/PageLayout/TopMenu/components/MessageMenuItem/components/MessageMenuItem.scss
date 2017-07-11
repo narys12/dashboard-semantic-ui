@@ -1,0 +1,14 @@
+#message-menu-item{
+    font-size: 10px;
+    width: 250px;
+    #message-menu-content{
+        font-size: 1em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        .date{
+            font-size: 0.7em
+        }
+    }
+}
